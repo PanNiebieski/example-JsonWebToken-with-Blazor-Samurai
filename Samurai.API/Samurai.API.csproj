@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Samurai.Domain\Samurai.Domain.csproj" />
+    <ProjectReference Include="..\Samurai.Persistence.StaticClass\Samurai.Infrastructur.Persistence.StaticClass.csproj" />
+    <ProjectReference Include="..\Samurai.Security\Samurai.Infrastructure.Security.csproj" />
+  </ItemGroup>
+
+</Project>

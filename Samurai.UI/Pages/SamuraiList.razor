@@ -1,0 +1,44 @@
+﻿@page "/samurailist"
+
+
+
+
+
+<AuthorizeView Policy="@Policies.IsAdmin">
+    <Authorized>
+
+        <h3>Samuraje</h3>
+
+        @if (Warriors == null)
+        {
+            <p><em>Loading...</em></p>
+        }
+        else
+        {
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nazwa</th>
+                        <th>Wiek</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var p in Warriors)
+                    {
+                        <tr>
+
+                            <td class="post-title">@p.Name </td>
+                            <td class="post-title">@p.Age </td>
+                            <td class="post-title">@p.ImageUrl</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </Authorized>
+    <NotAuthorized>
+        <p>Proszę się zalogować. Samuraju</p>
+    </NotAuthorized>
+</AuthorizeView>

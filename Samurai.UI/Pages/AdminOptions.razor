@@ -1,0 +1,35 @@
+﻿@page "/adminoptions"
+
+<AuthorizeView Policy="@Policies.IsAdmin">
+    <Authorized>
+
+        <p class="back-to-catalog mt-3">
+            <a class="back-link" @onclick="@NavigateToList">---- Zobacz listę samurajów ----</a>
+        </p>
+
+
+
+    </Authorized>
+    <NotAuthorized>
+        <p>Proszę się zalogować</p>
+    </NotAuthorized>
+</AuthorizeView>
+<br />
+
+<AuthorizeView Policy="@Policies.IsClaim">
+    <Authorized>
+        <p>@Policies.IsClaim : true</p>
+    </Authorized>
+    <NotAuthorized>
+        <p>@Policies.IsClaim : false</p>
+    </NotAuthorized>
+</AuthorizeView>
+
+Zawartość tokenu JSON
+<p>
+    @Data
+</p>
+
+<p class="back-to-catalog mt-3">
+    <a class="back-link" @onclick="@DeleteToken">---- Skasuj token ----</a>
+</p>
